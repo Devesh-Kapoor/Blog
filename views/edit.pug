@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Edit Post
+  form(action=`/posts/edit/${post.Post_ID}`, method='POST')
+    input(type='hidden', name='_csrf', value=csrfToken)
+    div
+      label(for='title') Title:
+      input(type='text', name='title', id='title', value=post.post_title)
+    div
+      label(for='content') Content:
+      textarea(name='content', id='content')= post.post
+    div
+      input(type='submit', value='Update Post')

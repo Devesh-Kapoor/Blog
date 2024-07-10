@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  div 
+    // Add a title to the blog
+    h1.header= title
+    nav.topnav
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/login') Log In
+        li
+          a(href='/signup') Sign Up

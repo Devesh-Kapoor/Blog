@@ -1,0 +1,37 @@
+extends layout
+
+block content
+
+    div 
+        // Add a title to the blog
+        h1.header= title
+        nav.topnav
+            ul
+                li
+                    a(href='/') Home
+                li
+                    a(href='/login') Log In
+                li
+                    a(href='/signup') Sign Up
+        // Display error message if it exists
+        if error
+            p.error= error
+        // Log in form 
+        form(action='/login', method='post')#loginForm
+            div#username
+                label(for='username') Username:
+                input(type='text', name='username', id='username')
+            div#password
+                label(for='password') Password:
+                input(type='password', name='password', id='password')
+            div#two_authenication  
+                label(for='2FA code') 2FA code:
+                input(type='text', name='two_authenication', id='two_authenication')
+            div#submit
+                input(type='submit', value='Log in')
+            
+
+        // Sign up link
+        a(href='/signup') Sign up
+
+

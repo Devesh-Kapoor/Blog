@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+
+    div 
+    // Add a title to the blog
+    h1.header= title
+    nav.topnav
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/login') Log In
+        li
+          a(href='/signup') Sign Up
+
+    // Display error message if it exists
+    if error
+      p.error= error
+    // sign up form
+    form(action='/signup', method='post')
+        div
+        label(for='email') Email:
+        input(type='email', name='email', id='email')
+        div
+        label(for='username') Username:
+        input(type='text', name='username', id='username')
+        div
+        label(for='password') Password:
+        input(type='password', name='password', id='password')
+        div#two_authenication 
+        label(for='two_authenication') Two-factor authentication:
+        input(type='text', name='two_authenication', id='two_authenication')
+        div
+        input(type='submit', value='Sign up')
+    
+    // Log in link
+    a(href='/login') Log in
+
+    // write the requirements for the password
+    p Password must be at least 8 characters long and contain at least one number, one uppercase letter, one lowercase letter, and one special character.
+    //write the requirements for the username
+    p Username must be at least 8 characters long and contain only letters and numbers. 

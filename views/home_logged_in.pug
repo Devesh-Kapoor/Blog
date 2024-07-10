@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  div 
+    // Add a title to the blog
+    h1.header= title
+    nav.topnav
+      ul
+        li
+          a(href='/posts') Posts
+        li(style='float:right;') 
+          a(href='/') Log Out
+        li(style='float:right;')
+          a(href='/profile') Profile
+        
